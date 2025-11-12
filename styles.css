@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/*
+	Rubik's Solver general styles
+
+	Author: Sean Briggs
+	Date:   2025-11-11
+
+	Filename: styles.css
+
+*/
+
+/* HTML and Body styles */
+
+html {
+	/* background-color: rgb(255, 200, 160); */
+	font-family: Verdana, Geneva, sans-serif;
+	height: 100%;
+}
+
+body {
+	/* background-color: white;
+	box-shadow: rgb(150, 150, 150) 10px 0px 40px, rgb(150, 150, 150) -10px 0px 40px; */
+	height: 100%;
+	margin: 0px auto;
+	min-width: 320px;
+    max-width: 1000px;
+}
+
+/* Header styles */
+
+header {
+	background-color: rgb(247, 247, 247);
+	width: 100%;
+	margin: 0px auto;
+	overflow: hidden;
+	max-width: fit-content;
+}
+
+header img {
+	display: block;
+	float: left;
+	width: 50%;
+	max-width: 350px;
+}
+
+header h1 {
+	float: left;
+	font-size: 5em;
+	padding: 0.7em 0em;
+}
+
+/* Article styles */
+
+article {
+	margin: 50px;
+}
+
+article h2 {
+	font-size: 2em;
+	line-height: 2em;
+}
