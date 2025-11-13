@@ -10,9 +10,12 @@
 
 */
 
-var colors = ["gray", "white", "yellow", "red", "orange", "green", "blue"];
-var cubeNames = ["White Cross"];
+var colors = ["blank", "white", "yellow", "red", "orange", "green", "blue"];
 
-var cubeCaptions = ["The White Cross"];
+var cubeIDs = ["wc", "fl"];
+var cubeCaptions = ["The White Cross", "The First Layer"];
 
-var cubeData = [[[0,1,0,1,1,1,0,1,0], [0,3,0,0,3,0,0,0,0], [0,6,0,0,6,0,0,0,0]]];
+var cubeData = [
+    [[0,1,0,1,1,1,0,1,0], [0,3,0,0,3,0,0,0,0], [0,6,0,0,6,0,0,0,0]],
+    [[1,1,1,1,1,1,1,1,1], [3,3,3,0,3,0,0,0,0], [6,6,6,0,6,0,0,0,0]]
+];

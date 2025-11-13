@@ -11,10 +11,11 @@
 */
 
 function createCube(name) {
-	var cubeIndex = cubeNames.findIndex(name);
+	var cubeIndex = cubeIDs.indexOf(name);
 	var thisCube = cubeData[cubeIndex];
+	var htmlCode = "";
 	for (var face = 0; face < 3; face++) {
-		var htmlCode = "<table class='face" + (face + 1) + "'> ";
+		htmlCode += "<table class='face" + (face + 1) + "'> ";
 		for (var i = 0; i < 3; i++) {
 			htmlCode += "<tr> ";
 			for (var j = 0; j < 3; j++) {

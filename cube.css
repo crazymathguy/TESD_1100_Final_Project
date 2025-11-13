@@ -15,7 +15,7 @@
 
 figure.cube {
 	width: 250px;
-	height: 300px;
+	height: 315px;
 }
 
 figure.cube > figcaption {
@@ -54,7 +54,7 @@ figure.cube > table.face3 {
 
 /* Create pieces */
 
-figure.cube > table td.gray {
+figure.cube > table td.blank {
 	background-color: gray;
 }
 
