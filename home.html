@@ -16,6 +16,7 @@
 	<link href="reset.css" rel="stylesheet" />
 	<link href="styles.css" rel="stylesheet" />
 	<link href="cube.css" rel="stylesheet" />
+	<script src="cube.js"></script>
 </head>
 
 <body>
@@ -105,26 +106,12 @@
 				at a time. The color most people start with is white, so in this tutorial
 				the layer we will start with is white as well. You do not have
 				to do it this way, but it makes it easier to understand the instructions.</p>
-			<p>So, back to solving the white cross.</p>
-			<p>When solved, the white cross will look like this.</p>
-			<figure class="cube">
-				<table class="face1">
-					<tr> <td></td> <td class="white"></td> <td></td> </tr>
-					<tr> <td class="white"></td> <td class="white"></td> <td class = "white"></td> </tr>
-					<tr> <td></td> <td class="white"></td> <td></td> </tr>
-				</table>
-				<table class="face2">
-					<tr> <td></td> <td class="red"></td> <td></td> </tr>
-					<tr> <td></td> <td class="red"></td> <td></td> </tr>
-					<tr> <td></td> <td></td> <td></td> </tr>
-				</table>
-				<table class="face3">
-					<tr> <td></td> <td class="blue"></td> <td></td> </tr>
-					<tr> <td></td> <td class="blue"></td> <td></td> </tr>
-					<tr> <td></td> <td></td> <td></td> </tr>
-				</table>
-				<figcaption>The White Cross</figcaption>
-			</figure>
+			<p>Ok, back to solving the white cross. When solved,
+				the white cross will look like this.</p>
+			<figure class="cube" id="White Cross"></figure>
+			<script>
+				createCube("White Cross");
+			</script>
 		</section>
 	</article>
 

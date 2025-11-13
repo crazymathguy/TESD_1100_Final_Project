@@ -21,6 +21,8 @@ figure.cube {
 figure.cube > figcaption {
 	transform: translate(0px, -175px);
 	text-align: center;
+	font-style: italic;
+	color: gray;
 }
 
 figure.cube > table {
@@ -52,7 +54,7 @@ figure.cube > table.face3 {
 
 /* Create pieces */
 
-figure.cube > table td {
+figure.cube > table td.gray {
 	background-color: gray;
 }
 
