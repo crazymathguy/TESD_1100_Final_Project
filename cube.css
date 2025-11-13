@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/*
+	Rubik's Solver styles to display cube
+
+	The 0.577 in the scale transform is approx. 1 / sqrt(3),
+	the length of the short diagonal of the rhombus
+
+	Author: Sean Briggs
+	Date:   2025-11-13
+
+	Filename: cube.css
+
+*/
+
+figure.cube {
+	width: 250px;
+	height: 300px;
+}
+
+figure.cube > figcaption {
+	transform: translate(0px, -175px);
+	text-align: center;
+}
+
+figure.cube > table {
+	width: 150px;
+	height: 150px;
+	border-collapse: collapse;
+}
+
+figure.cube > table td {
+	border: black solid 2px;
+}
+
+/* Create faces */
+
+figure.cube > table.face1 {
+	transform-style: flat;
+	transform: translate(50px) scale(1, 0.577) rotate(45deg);
+}
+
+figure.cube > table.face2 {
+	transform-style: flat;
+	transform: translate(-3px, -58px) rotate(-120deg) scale(1, 0.577) rotate(135deg);
+}
+
+figure.cube > table.face3 {
+	transform-style: flat;
+	transform: translate(103px, -208px) rotate(120deg) scale(1, 0.577) rotate(-135deg);
+}
+
+/* Create pieces */
+
+figure.cube > table td {
+	background-color: gray;
+}
+
+figure.cube > table td.white {
+	background-color: white;
+}
+
+figure.cube > table td.yellow {
+	background-color: yellow;
+}
+
+figure.cube > table td.red {
+	background-color: red;
+}
+
+figure.cube > table td.orange {
+	background-color: orange;
+}
+
+figure.cube > table td.green {
+	background-color: green;
+}
+
+figure.cube > table td.blue {
+	background-color: blue;
+}

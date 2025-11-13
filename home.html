@@ -15,6 +15,7 @@
 	<title>Rubik's Solver</title>
 	<link href="reset.css" rel="stylesheet" />
 	<link href="styles.css" rel="stylesheet" />
+	<link href="cube.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -24,9 +25,112 @@
 	</header>
 
 	<article>
-		<h2>Solving the white cross</h2>
-		<p>First, you must solve the white cross.</p>
+		<section>
+			<h2>Solving the Rubik's Cube</h2>
+			<p>So you want to learn how to solve the rubik's cube?
+				Well, in this article I will teach you a simple method
+				to do just that.</p>
+			<p>This tutorial may seem more complicated than others you have seen.
+				While it is true that there are many tutorials that claim to
+				solve the rubik's cube in 10 moves or less, they are all lying
+				to you. There is no magic move or set of moves to solve the rubik's cube.
+				Every person in history to have solved it either got lucky,
+				or they followed a procedure to reduce any scramble to simple,
+				manageable steps.</p>
+			<p>This article goes through one of the simplest methods to solve
+				a 3x3 rubik's cube known as the <em>Beginner Method.</em> There are many
+				other methods out there, but they usually involve more complicated
+				steps and have more things you need to learn and memorize.
+				The most popular is known as <em>CFOP.</em>
+				If you want a more advanced method, you should go check that out.</p>
+			<p>The beginner method is a layer-by-layer approach, which means that
+				instead of solving one color at a time, you split the cube into
+				three "layers" stacked on top of one another.
+				Each layer consists of multiple phases:</p>
+			<p>
+				<ol>
+					<li>The First Layer:
+						<ul>
+							<li>The White Cross</li>
+							<li>The White Corners</li>
+						</ul>
+					</li>
+					<li>The Second Layer:
+						<ul>
+							<li>Second Layer Edges</li>
+						</ul>
+					</li>
+					<li>The Third Layer:
+						<ul>
+							<li>The Yellow Cross
+								<ul>
+									<li>Orientation of the Edges</li>
+									<li>Alignment of the Edges</li>
+								</ul>
+							</li>
+							<li>The Yellow Corners
+								<ul>
+									<li>Positioning of the Corners</li>
+									<li>Orientation of the Corners</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</p>
+		</section>
+		<section>
+			<h2>Solving the White Cross</h2>
+			<p>First, you must solve the white cross. To do this,
+				find an edge piece with white on it.
+				Notice I said edge <em>piece.</em> This is important because
+				while there are 54 stickers on the cube (6 sides with 9 stickers each),
+				there are actually only 20 moving pieces.</p>
+			<p>The colors on each piece are stuck together, and can never change.
+				This means that for a piece to be solved, <em>all</em> the colors on it
+				must match the sides they're on.</p>
+			<p>There are three types of pieces:
+				<ul>
+					<li><b>Center pieces,</b> which have only one color, and do not move
+					because they are all attached to each other.</li>
+					<li><b>Edge pieces,</b> which have two colors, and touch the
+					center pieces and corner pieces. And</li>
+					<li><b>Corner pieces,</b> which have three colors,
+					and only touch edge pieces.</li>
+				</ul>
+			</p>
+			<p>A common, and very natural, way to try to solve the rubik's cube
+				is by solving one color or side at a time. But since pieces are
+				inseparable, a better strategy is to solve the cube one <em>layer</em>
+				at a time. The color most people start with is white, so in this tutorial
+				the layer we will start with is white as well. You do not have
+				to do it this way, but it makes it easier to understand the instructions.</p>
+			<p>So, back to solving the white cross.</p>
+			<p>When solved, the white cross will look like this.</p>
+			<figure class="cube">
+				<table class="face1">
+					<tr> <td></td> <td class="white"></td> <td></td> </tr>
+					<tr> <td class="white"></td> <td class="white"></td> <td class = "white"></td> </tr>
+					<tr> <td></td> <td class="white"></td> <td></td> </tr>
+				</table>
+				<table class="face2">
+					<tr> <td></td> <td class="red"></td> <td></td> </tr>
+					<tr> <td></td> <td class="red"></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> </tr>
+				</table>
+				<table class="face3">
+					<tr> <td></td> <td class="blue"></td> <td></td> </tr>
+					<tr> <td></td> <td class="blue"></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> </tr>
+				</table>
+				<figcaption>The White Cross</figcaption>
+			</figure>
+		</section>
 	</article>
+
+	<footer>
+		<a href="#">Sean Briggs</a> &copy;2025
+	</footer>
 </body>
 
 </html>
