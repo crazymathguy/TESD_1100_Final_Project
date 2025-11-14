@@ -13,14 +13,14 @@
 /* HTML and Body styles */
 
 html {
-	background-color: rgb(255, 200, 160);
+	/* background-color: rgb(255, 200, 160); */
 	font-family: Verdana, Geneva, sans-serif;
 	height: 100%;
 }
 
 body {
-	background-color: white;
-	box-shadow: rgb(150, 150, 150) 10px 0px 40px, rgb(150, 150, 150) -10px 0px 40px;
+	/* background-color: white;
+	box-shadow: rgb(150, 150, 150) 10px 0px 40px, rgb(150, 150, 150) -10px 0px 40px; */
 	margin: 0px auto;
 	min-width: 320px;
     max-width: 1000px;
@@ -65,16 +65,22 @@ footer {
 
 article {
 	margin: 50px 100px;
+	line-height: 1.5em;
 }
 
 article h2 {
 	font-size: 2.2em;
 	line-height: 2em;
 	margin-top: 1em;
+	text-align: center;
+}
+
+article h3 {
+	font-size: 1.4em;
+	margin-bottom: 0.7em;
 }
 
 article p {
-	line-height: 1.5em;
 	margin-bottom: 0.7em;
 	text-indent: 2em;
 }
