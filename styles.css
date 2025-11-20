@@ -18,14 +18,6 @@ html {
 	height: 100%;
 }
 
-body {
-	/* background-color: white;
-	box-shadow: rgb(150, 150, 150) 10px 0px 40px, rgb(150, 150, 150) -10px 0px 40px; */
-	margin: 0px auto;
-	min-width: 320px;
-    max-width: 1000px;
-}
-
 /* Header styles */
 
 header {
@@ -59,16 +51,25 @@ footer {
 	background-color: rgb(255, 240, 220);
 	text-align: center;
 	padding: 10px;
+	margin-top: 20px;
+	clear: both;
 }
 
 /* Article styles */
 
 article {
-	margin: 50px 100px;
+	/* background-color: white;
+	box-shadow: rgb(150, 150, 150) 10px 0px 40px, rgb(150, 150, 150) -10px 0px 40px; */
+	width: 50%;
+	min-width: 320px;
+    max-width: 800px;
+	margin: 50px 50px;
+	margin-left: 25%;
 	line-height: 1.5em;
 }
 
 article h2 {
+	clear: left;
 	font-size: 2.2em;
 	line-height: 2em;
 	margin-top: 1em;
@@ -76,13 +77,36 @@ article h2 {
 }
 
 article h3 {
+	clear: left;
 	font-size: 1.4em;
 	margin-bottom: 0.7em;
 }
 
 article p {
+	clear: left;
 	margin-bottom: 0.7em;
 	text-indent: 2em;
+}
+
+article aside {
+	float: right;
+	width: 40%;
+	padding: 15px;
+	margin: 0px 0px 20px 20px;
+	margin-right: -35%;
+	background-color: rgb(255, 217, 190);
+	border: black solid 2px;
+}
+
+article figure {
+	float: left;
+	margin: 0px 20px;
+}
+
+article code {
+	font-family: inherit;
+	background-color: rgb(225, 225, 225);
+	color: darkred;
 }
 
 /* Article List Styles */
@@ -106,3 +130,5 @@ article ol ul {
 article ul ul {
 	list-style-type: circle;
 }
+
+/* Other Styles */

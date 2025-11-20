@@ -83,41 +83,110 @@
 		</section>
 		<section>
 			<h2>Solving the White Cross</h2>
-			<h3>What Is the First Layer?</h3>
-			<p>First, you must solve the white cross. To do this,
-				find an edge piece with white on it.
-				Notice I said edge <em>piece.</em> This is important because
-				while there are 54 stickers on the cube (6 sides with 9 stickers each),
-				there are actually only 20 moving pieces.</p>
-			<p>The colors on each piece are stuck together, and can never change.
-				This means that for a piece to be solved, <em>all</em> the colors on it
-				must match the sides they're on.</p>
-			<p>There are three types of pieces:
-				<ul>
-					<li><b>Center pieces,</b> which have only one color, and do not move
-					because they are all attached to each other.</li>
-					<li><b>Edge pieces,</b> which have two colors, and touch the
-					center pieces and corner pieces. And</li>
-					<li><b>Corner pieces,</b> which have three colors,
-					and only touch edge pieces.</li>
-				</ul>
-			</p>
-			<p>A common, and very natural, way to try to solve the rubik's cube
-				is by solving one color or side at a time. But since pieces are
-				inseparable, a better strategy is to solve the cube one <em>layer</em>
-				at a time. The color most people start with is white, so in this tutorial
-				the layer we will start with is white as well. You do not have
-				to do it this way, but it makes it easier to understand the instructions.</p>
-			<h3>Your First Piece</h3>
-			<p>Ok, back to solving the white cross. When solved,
-				the white cross will look like this:</p>
-			<figure class="cube" id="wc"></figure>
+			<p>First, you must solve the white cross.
+				When you have finished this step, the cube will look like this
+				(the gray pieces indicate that the piece could be any color,
+				we don't care what the rest of the cube looks like right now):</p>
+			<figure class="cube" id="whiteCross"></figure>
 			<script>
-				createCube("wc");
+				createCube("whiteCross");
 			</script>
 			<p>Each edge piece with white on it will be between the white center
 				and the center of the other color on that piece. (For example,
 				the white-blue edge piece is touching the white center and the blue center).</p>
+			<aside>
+				<p>Notice I said edge <em>piece.</em> This is important because
+					while there are 54 stickers on the cube (6 sides with 9 stickers each),
+					there are actually only 20 moving pieces.</p>
+				<p>The colors on each piece are stuck together, and can never change.
+					This means that for a piece to be solved, <em>all</em> the colors on it
+					must match the sides they're on.</p>
+				<p>There are three types of pieces:
+					<ul>
+						<li><b>Center pieces (6),</b> which have only one color, and do
+							not move because they are all attached to each other.</li>
+						<li><b>Edge pieces (12),</b> which have two colors, and touch the
+							center pieces and corner pieces. And</li>
+						<li><b>Corner pieces (8),</b> which have three colors,
+							and only touch edge pieces.</li>
+					</ul>
+				</p>
+				<p>A common, and very natural, way to try to solve the rubik's cube
+					is by solving one color or side at a time. But since pieces are
+					inseparable, a better strategy is to solve the cube one <em>layer</em>
+					at a time. The color most people start with is white, so in this tutorial
+					the layer we will start with is white as well. You do not have
+					to do it this way, but it makes it easier to understand the instructions.</p>
+			</aside>
+			<p>To start solving the rubik's cube, we hold the cube with the white
+				center on top, which will put the yellow center on the bottom
+				since they are always opposite from each other.</p>
+			<p>We solve the white cross one piece at a time, so first,
+				you need to find a white edge. To solve it, turn the cube until
+				the piece is touching the yellow center (so the piece is on the bottom).
+				Then turn the bottom until the side color of the piece matches one
+				of the centers.</p>
+			<figure class="cube" id="matchEdge"></figure>
+			<script>
+				createCube("matchEdge");
+			</script>
+			<figure class="cube bottom" id="matchEdge2"></figure>
+			<script>
+				createCube("matchEdge2");
+			</script>
+			<p>If that's impossible, look at the color on the other side of the piece
+				(on the bottom of the cube), and hold that color center facing towards you
+				(still with yellow on the bottom), and move your piece to one side of
+				the cube (still on the bottom).</p>
+			<figure class="cube" id="notMatch"></figure>
+			<script>
+				createCube("notMatch");
+			</script>
+			<figure class="cube bottom" id="notMatch2"></figure>
+			<script>
+				createCube("notMatch2");
+			</script>
+			<p>If you have the first case, it can be solved by just turning the side
+				with the matching color twice so that the white side of the piece
+				attaches to the white center. (fig c below)</p>
+			<p>The second case is a little more tricky. If your piece is on the left,
+				you need to turn the left side once so that the side color matches
+				(blue in the example), then turn the front until the white piece is on top,
+				attached to the white center. (fig c) If its on the right, just do the same thing
+				on the other side. However, if this is not your first cross piece,
+				you will have just unsolved one of the others (red in the example),
+				so you will then need to turn the left side (or right side)
+				back the other way to fix it. The exact sequence of moves is
+				<code>L' F L</code> (or <code>R F' R'</code>). To learn what these letters mean,
+				visit this page: <a href="#">move notation</a>. It will be very helpful
+				to know later on.</p>
+			<aside>The move for the first case is just <code>F2</code></aside>
+			<figure class="cube" id="crossPiece"></figure>
+			<script>
+				createCube("crossPiece");
+			</script>
+			<p>To finish solving the cross, just repeat these steps for all four pieces.</p>
+			<p>In the first step (connecting the piece to the yellow center),
+				you may end up unsolving a cross piece above the piece you found.
+				In that case, you need to move your new piece to one side, then turn the
+				front side back to fix your already solved cross piece. Then you can
+				continue with the steps to solve your new piece.</p>
+			<p>You may also notice that a piece you find is already connected to its
+				non-white center (for example, if your cube started already looking like fig a).
+				If that is the case, you do not need to move it to the bottom first,
+				you can just turn the front until the piece is on top.</p>
+			<p>To see all the steps explained with an example cross, see the video below.</p>
+			<p>/Video explaining white cross/</p>
+		</section>
+		<section>
+			<h2>Completing the First Layer</h2>
+			<p>The next step in solving the cube is to solve the white corners.
+				The completed step will look like this:
+			</p>
+			<figure class="cube" id="firstLayer"></figure>
+			<script>
+				createCube("firstLayer");
+			</script>
 		</section>
 	</article>
 
