@@ -80,6 +80,17 @@
 					</li>
 				</ol>
 			</p>
+			<p>Each step completed:</p>
+			<figure class="cube" id="whiteCross"></figure>
+			<script>createCube("whiteCross");</script>
+			<figure class="cube" id="firstLayer"></figure>
+			<script>createCube("firstLayer");</script>
+			<figure class="cube" id="secondLayer"></figure>
+			<script>createCube("secondLayer");</script>
+			<figure class="cube" id="yellowCross"></figure>
+			<script>createCube("yellowCross");</script>
+			<figure class="cube" id="solved"></figure>
+			<script>createCube("solved");</script>
 		</section>
 		<section>
 			<h2>Solving the White Cross</h2>
@@ -87,9 +98,9 @@
 				When you have finished this step, the cube will look like this
 				(the gray pieces indicate that the piece could be any color,
 				we don't care what the rest of the cube looks like right now):</p>
-			<figure class="cube" id="whiteCross"></figure>
+			<figure class="cube" id="whiteCross1"></figure>
 			<script>
-				createCube("whiteCross");
+				createCube("whiteCross1");
 			</script>
 			<p>Each edge piece with white on it will be between the white center
 				and the center of the other color on that piece. (For example,
@@ -130,9 +141,9 @@
 			<script>
 				createCube("matchEdge");
 			</script>
-			<figure class="cube bottom" id="matchEdge2"></figure>
+			<figure class="cube bottom" id="matchEdgeB"></figure>
 			<script>
-				createCube("matchEdge2");
+				createCube("matchEdgeB");
 			</script>
 			<p>If that's impossible, look at the color on the other side of the piece
 				(on the bottom of the cube), and hold that color center facing towards you
@@ -142,9 +153,9 @@
 			<script>
 				createCube("notMatch");
 			</script>
-			<figure class="cube bottom" id="notMatch2"></figure>
+			<figure class="cube bottom" id="notMatchB"></figure>
 			<script>
-				createCube("notMatch2");
+				createCube("notMatchB");
 			</script>
 			<p>If you have the first case, it can be solved by just turning the side
 				with the matching color twice so that the white side of the piece
@@ -183,9 +194,9 @@
 			<p>The next step in solving the cube is to solve the white corners.
 				The completed step will look like this:
 			</p>
-			<figure class="cube" id="firstLayer"></figure>
+			<figure class="cube" id="firstLayer1"></figure>
 			<script>
-				createCube("firstLayer");
+				createCube("firstLayer1");
 			</script>
 		</section>
 	</article>

@@ -12,6 +12,9 @@
 
 function createCube(name) {
 	const fig = document.getElementById(name);
+	if (/\d/.test(name[name.length - 1])) {
+		name = name.slice(0, -1);
+	}
 	var cubeIndex = cubeIDs.indexOf(name);
 	var thisCube = cubeData[cubeIndex];
 	for (var face = 0; face < 3; face++) {

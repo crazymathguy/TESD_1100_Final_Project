@@ -85,7 +85,7 @@ figure.cube > table td.orange {
 }
 
 figure.cube > table td.green {
-	background-color: green;
+	background-color: rgb(0, 216, 0);
 }
 
 figure.cube > table td.blue {
