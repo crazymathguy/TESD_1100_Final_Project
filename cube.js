@@ -20,7 +20,7 @@ function createCube(name) {
 	for (var face = 0; face < 3; face++) {
 		const thisFace = document.createElement("table");
 		thisFace.classList.add("face" + (face + 1));
-		if (fig.classList.contains("bottom")) {
+		if (upsideDown[cubeIndex]) {
 			thisFace.classList.add("bottom");
 		}
 		var htmlCode = "";
