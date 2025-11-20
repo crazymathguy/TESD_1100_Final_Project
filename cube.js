@@ -11,21 +11,27 @@
 */
 
 function createCube(name) {
+	const fig = document.getElementById(name);
 	var cubeIndex = cubeIDs.indexOf(name);
 	var thisCube = cubeData[cubeIndex];
-	var htmlCode = "";
 	for (var face = 0; face < 3; face++) {
-		htmlCode += "<table class='face" + (face + 1) + "'> ";
+		const thisFace = document.createElement("table");
+		thisFace.classList.add("face" + (face + 1));
+		if (fig.classList.contains("bottom")) {
+			thisFace.classList.add("bottom");
+		}
+		var htmlCode = "";
 		for (var i = 0; i < 3; i++) {
 			htmlCode += "<tr> ";
 			for (var j = 0; j < 3; j++) {
-				htmlCode += "<td class='" + colors[thisCube[face][3 * i + j]] + "'></td> ";
+				htmlCode += "<td class='" + colors[thisCube[face][i * 3 + j]] + "'></td> ";
 			}
 			htmlCode += "</tr> ";
 		}
-		htmlCode += "</table> ";
+		thisFace.innerHTML = htmlCode;
+		fig.append(thisFace);
 	}
-	htmlCode += "<figcaption>" + cubeCaptions[cubeIndex] + "</figcaption>";
-
-	document.getElementById(name).innerHTML = htmlCode;
+	const caption = document.createElement("figcaption");
+	caption.textContent = cubeCaptions[cubeIndex];
+	fig.append(caption);
 }

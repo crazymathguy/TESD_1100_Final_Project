@@ -21,6 +21,7 @@ figure.cube {
 figure.cube > figcaption {
 	transform: translate(0px, -175px);
 	text-align: center;
+	white-space: nowrap;
 	font-style: italic;
 	color: gray;
 }
@@ -38,18 +39,27 @@ figure.cube > table td {
 /* Create faces */
 
 figure.cube > table.face1 {
-	transform-style: flat;
-	transform: translate(50px) scale(1, 0.577) rotate(45deg);
+	transform: translate(50px) scale(1, 0.577) rotate(-45deg);
 }
 
 figure.cube > table.face2 {
-	transform-style: flat;
 	transform: translate(-3px, -58px) rotate(-120deg) scale(1, 0.577) rotate(135deg);
 }
 
 figure.cube > table.face3 {
-	transform-style: flat;
 	transform: translate(103px, -208px) rotate(120deg) scale(1, 0.577) rotate(-135deg);
+}
+
+figure.cube > table.face1.bottom {
+	transform: translate(50px, 123px) scale(1, 0.577) rotate(-45deg);
+}
+
+figure.cube > table.face2.bottom {
+	transform: translate(-3px, -119px) rotate(-60deg) scale(1, 0.577) rotate(45deg);
+}
+
+figure.cube > table.face3.bottom {
+	transform: translate(103px, -269px) rotate(60deg) scale(1, 0.577) rotate(-45deg);
 }
 
 /* Create pieces */
