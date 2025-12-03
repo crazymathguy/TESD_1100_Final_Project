@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+		This is the main page for the Rubik's Solver website
+
+		Author: Sean Briggs
+		Date:	2025-11-11
+
+		Filename: home.html
+	-->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Rubik's Solver: How To Solve a 3x3 Rubik's Cube</title>
+	<link href="reset.css" rel="stylesheet" />
+	<link href="styles.css" rel="stylesheet" />
+	<link href="cube.css" rel="stylesheet" />
+	<script src="cube-data.js"></script>
+	<script src="cube.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="rubiks-cube-logo.png" alt="Rubik's" />
+		<h1>Solver</h1>
+	</header>
+
+	<article>
+		<section>
+			<h2>Solving the 3x3 Rubik's Cube</h2>
+			<p>So you want to learn how to solve the rubik's cube?
+				Well, in this article I will teach you a simple method
+				to do just that.
+			</p>
+			<p>This tutorial may seem more complicated than others you have seen.
+				While it is true that there are many tutorials that claim to
+				solve the rubik's cube in 10 moves or less, they are all lying
+				to you. There is no magic move or set of moves to solve the rubik's cube.
+				Every person in history to have solved it either got lucky,
+				or they followed a procedure similar to this one to reduce any scramble
+				to simple, manageable steps.
+			</p>
+			<p>This article walks through one of the simplest methods to solve
+				a 3x3 rubik's cube known as the <em>Beginner Method.</em> There are many
+				other methods out there, but they usually involve more complicated
+				steps and have more things you need to learn and memorize.
+				The most popular is known as <em>CFOP.</em>
+				If you want a more advanced method, you should go check that out.
+			</p>
+			<p>The Beginner Method is a layer-by-layer approach, which means that
+				instead of solving one color at a time, you split the cube into
+				three "layers" stacked on top of one another.
+				Each layer consists of multiple phases:
+			</p>
+			<ol>
+				<li>The First Layer:
+					<ul>
+						<li>The White Cross</li>
+						<li>The White Corners</li>
+					</ul>
+				</li>
+				<li>The Second Layer:
+					<ul>
+						<li>Second Layer Edges</li>
+					</ul>
+				</li>
+				<li>The Third Layer:
+					<ul>
+						<li>The Yellow Cross
+							<ul>
+								<li>Orientation of the Edges</li>
+								<li>Alignment of the Cross</li>
+							</ul>
+						</li>
+						<li>The Yellow Corners
+							<ul>
+								<li>Positioning of the Corners</li>
+								<li>Orientation of the Corners</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<p>Each step completed:</p>
+			<figure class="cube" id="whiteCross"></figure>
+			<script>createCube("whiteCross");</script>
+			<figure class="cube" id="firstLayer"></figure>
+			<script>createCube("firstLayer");</script>
+			<figure class="cube" id="secondLayer"></figure>
+			<script>createCube("secondLayer");</script>
+			<figure class="cube" id="yellowCross"></figure>
+			<script>createCube("yellowCross");</script>
+			<figure class="cube" id="solved"></figure>
+			<script>createCube("solved");</script>
+		</section>
+		<section>
+			<h2>Solving the White Cross</h2>
+			<p>First, you must solve the white cross.
+				When you have finished this step, the cube will look like this
+				(the gray pieces indicate that the piece could be any color,
+				we don't care what the rest of the cube looks like right now):
+			</p>
+			<figure class="cube" id="whiteCross1"></figure>
+			<script>createCube("whiteCross1");</script>
+			<p>Each edge piece with white on it will be between the white center
+				and the center of the other color on that piece. (For example,
+				the white-blue edge piece is touching the white center and the blue center).
+			</p>
+			<aside>
+				<p>Notice I said edge <em>piece.</em> This is important because
+					while there are 54 stickers on the cube (6 sides with 9 stickers each),
+					there are actually only 20 moving pieces.
+				</p>
+				<p>The colors on each piece are stuck together, and can never change.
+					This means that for a piece to be solved, <em>all</em> the colors on it
+					must match the sides they're on.
+				</p>
+				<p>There are three types of pieces:
+					<ul>
+						<li><strong>Center pieces (6),</strong> which have only one color, and do
+							not move because they are all attached to each other.</li>
+						<li><strong>Edge pieces (12),</strong> which have two colors, and touch the
+							center pieces and corner pieces. And</li>
+						<li><strong>Corner pieces (8),</strong> which have three colors,
+							and only touch edge pieces.</li>
+					</ul>
+				</p>
+				<p>A common, and very natural, way to try to solve the rubik's cube
+					is by solving one color or side at a time. But since pieces are
+					inseparable, a better strategy is to solve the cube one <em>layer</em>
+					at a time. The color most people start with is white, so in this tutorial
+					the layer we will start with is white as well. You do not have
+					to do it this way, but it makes it easier to understand the instructions.
+				</p>
+			</aside>
+			<p>To start solving the rubik's cube, we hold the cube with the white
+				center on top, which will put the yellow center on the bottom
+				since they are always opposite from each other.
+			</p>
+			<p>We solve the white cross one piece at a time, so first,
+				you need to find a white edge. To solve it, turn the cube until
+				the piece is touching the yellow center (so the piece is on the bottom).
+				Then turn the bottom until the side color of the piece matches one
+				of the centers.
+			</p>
+			<figure class="cube" id="matchEdge"></figure>
+			<script>createCube("matchEdge");</script>
+			<figure class="cube" id="matchEdgeB"></figure>
+			<script>createCube("matchEdgeB");</script>
+			<p>If that's impossible, look at the color on the other side of the piece
+				(on the bottom of the cube), and hold that color center facing towards you
+				(still with yellow on the bottom), and move your piece to one side of
+				the cube (still on the bottom).
+			</p>
+			<figure class="cube" id="notMatch"></figure>
+			<script>createCube("notMatch");</script>
+			<figure class="cube" id="notMatchB"></figure>
+			<script>createCube("notMatchB");</script>
+			<p>If you have the first case, it can be solved by just turning the side
+				with the matching color twice so that the white side of the piece
+				attaches to the white center. (fig c below)
+			</p>
+			<p>The second case is a little more tricky. If your piece is on the left,
+				you need to turn the left side once so that the side color matches
+				(blue in the example), then turn the front until the white piece is on top,
+				attached to the white center. (fig c) If its on the right, just do the same thing
+				on the other side. However, if this is not your first cross piece,
+				you will have just unsolved one of the others (red in the example),
+				so you will then need to turn the left side (or right side)
+				back the other way to fix it. The exact sequence of moves is
+				<span class="alg">L' F L</span> (or <span class="alg">R F' R'</span>).
+				To learn what these letters mean, visit this page: <a href="#">
+				How To Read Move Notation</a>. It will be very helpful to know later on.
+			</p>
+			<p>(For the curious: the move for the first case is just
+				<span class="alg">F2</span>)
+			</p>
+			<figure class="cube" id="crossPiece"></figure>
+			<script>createCube("crossPiece");</script>
+			<p>To finish solving the cross, just repeat these steps for all four pieces.</p>
+			<p>In the first step (connecting the piece to the yellow center),
+				you may end up unsolving a cross piece above the piece you found.
+				In that case, you need to move your new piece to one side, then turn the
+				front side back to fix your already solved cross piece. Then you can
+				continue with the steps to solve your new piece.
+			</p>
+			<p>You may also notice that a piece you find is already connected to its
+				non-white center (for example, if your cube started already looking like fig a).
+				If that is the case, you do not need to move it to the bottom first,
+				you can just turn the front until the piece is on top.
+			</p>
+			<p>To see all the steps explained with an example cross, see the video below.</p>
+			<p>/Video explaining white cross/</p>
+			<div class="practice">
+				<p>Wait! Before you go on!</p>
+				<p>If you are just here to solve the rubik's cube once so that its no longer
+					mixed up on your shelf, or just to have the satisfaction of doing it,
+					then you can read on. 
+				</p>
+				<p>But if you are here to actually learn how to solve the rubik's cube,
+					then don't go on yet! If you actually want to learn it, then you will
+					need to practice. I recommend practicing each step until you can do it
+					without looking back here for help.
+				</p>
+				<p>To practice the cross, just solve the cross, and then mix up the cube again
+					and solve the cross again. Keep mixing it up and solving it until you have
+					a good grasp of the steps and the ideas. Once you are comfortable picking
+					up a cube and solving the cross without too much trouble, then you should
+					go on to the next section.
+				</p>
+				<p>There will be one of these after every section telling you the best way
+					to pratice each step because they are all different. I highly recommend
+					pausing when you see each one to make sure you really understand what to do.
+				</p>
+			</div>
+		</section>
+		<section>
+			<h2>Completing the First Layer</h2>
+			<p>The next step in solving the rubik's cube is to solve the white corners.
+				The completed step will look like this:
+			</p>
+			<figure class="cube" id="firstLayer1"></figure>
+			<script>createCube("firstLayer1");</script>
+			<p>You may have noticed in the figure that white is now on the bottom.
+				For the rest of the solve, we want it that way. So flip over your cube now
+				so that white is now on the bottom, and yellow is on top.
+			</p>
+			<p>First, we need to find a white corner. That just means any corner with white on it.
+			</p>
+			<p>Next, find the spot where it's supposed to go, then turn the top until the corner
+				is directly above the spot where it is supposed to go.
+			</p>
+			<figure class="cube" id="cornerSlot"></figure>
+			<script>createCube("cornerSlot");</script>
+			<figure class="cube" id="cornerSlotL"></figure>
+			<script>createCube("cornerSlotL");</script>
+			<p>Now rotate the cube so that the corner is in front, and the white sticker
+				is on the side (as shown in fig d). Depending on which way the piece
+				is rotated, it may need to be on the left or the right.
+			</p>
+			<p>With white on the right, insert the corner like this: <span class="alg">R U R'</span>.
+				This is called the <strong>right trigger.</strong> It will put in any corner
+				on the right. If it's on the left use the <strong>left trigger:</strong>
+				<span class="alg">L' U' L</span>.
+			</p>
+			<p>Notice that "inserting" or solving the corners is very similar to edges that are
+				flipped the wrong way, but now we are turning the top instead of the front.
+			</p>
+			<figure class="cube" id="solvedCorner"></figure>
+			<script>createCube("solvedCorner");</script>
+			<p>There are two other cases that can happen as well. The corner piece may be
+				already in the correct position, but oriented the wrong way, or it may be
+				above its spot like it's supposed to, but the white sticker is facing up
+				instead of to one side.
+			</p>
+			<figure class="cube" id="cornerInSlot"></figure>
+			<script>createCube("cornerInSlot");</script>
+			<figure class="cube" id="cornerUp"></figure>
+			<script>createCube("cornerUp");</script>
+			<p>For the first case, once again hold the cube so that the white sticker is
+				facing to the side, then do the right trigger if it's facing right
+				(or the left trigger if it's facing left). Then move the corner back over
+				to above its spot, and do the right (or left) trigger again to put it in
+				the correct way.
+			</p>
+			<p>For the second case, hold it on the right and do the right trigger.
+				This will turn it into the first case, and you can solve it from there.
+			</p>
+			<aside>
+				This skips the <span class="alg">R'</span> and <span class="alg">R</span>,
+				and turns the two <span class="alg">U</span> moves into
+				<span class="alg">U2</span>, creating the new move sequence
+				<span class="alg">R U2 R' U'</span>
+			</aside>
+			<p>Once you do this, you may notice that you moved the corner down
+				and then right back up. So you can actually just lift up the corner,
+				and then turn the top twice instead of once, which will turn it into
+				a normal corner, which you can solve using the right trigger.
+			</p>
+			<p>As before with the cross edge pieces, repeat the steps for each corner
+				until you have solved the first layer.
+			</p>
+			<p>Watch the video below to see examples of each step.</p>
+			<p>/Video explaining white corners/</p>
+			<div class="practice">
+				<p>It's Practice Time again!</p>
+				<p>To practice the white corners, I would recommend practicing the entire
+					first layer (cross and corners) to solidfy both corner solving
+					and the relationship between the edges and corners.
+				</p>
+			</div>
+		</section>
+		<section>
+			<h2>The Second Layer</h2>
+			<p>The last thing to do before we get to the top layer is to solve the edges
+				in the second layer. The completed step will look like this:
+			</p>
+			<figure class="cube" id="secondLayer1"></figure>
+			<script>createCube("secondLayer1");</script>
+			<p>Of course, we first need to find a second layer edge. A second layer edge
+				is any edge that does not have yellow on it (or whatever your top color is).
+				Once you have found one, turn the top until it matches with one of the centers.
+				This will always be possible, there are no bad cases for this.
+			</p>
+			<figure class="cube" id="secondEdge"></figure>
+			<script>createCube("secondEdge");</script>
+			<figure class="cube" id="secondEdgeL"></figure>
+			<script>createCube("secondEdgeL");</script>
+			<p>Once you have your edge in place, make sure you are holding the cube
+				so that the edge is on the front (as shown in fig f). This means
+				that the spot it is supposed to go should also be on the front.
+			</p>
+			<p>Now turn the top to move the edge piece <em>away</em> from the spot it's
+				supposed to go. This sets up the algorithm to put the edge in its spot
+				(This step is included as the first <span class="alg">U</span> or
+				<span class="alg">U'</span> move in the algorithm).
+			</p>
+			<aside>
+				<p>In cubing, an <em>algorithm</em> is a sequence of moves.
+					Any sequence of moves could be considered an algorithm, but we generally
+					call something an algorithm when it does something useful, which usually
+					means moving just a few pieces around to make sure we keep our current
+					progress.
+				</p>
+			</aside>
+			<p>The edge insertion algorithm goes like this: <span class="alg">
+				U R U' R' y U' L' U L</span>. I think of it like this. You first take out
+				the corner from its spot, and in doing so, you are pairing up the corner
+				and the edge to be put back in together. You then put the corner back
+				in a different way so it changes the cube.
+			</p>
+			<p>That is the essence of any good (useful) algorithm. Break some progress,
+				then restore it in a different way. This will change something in the
+				parts that you haven't solved yet, and move them around to solve them too.
+			</p>
+			<p>The edge insertion algorithm above is for edges that need to go on the right.
+				There is also the left-side version of the algorithm, which is exactly the
+				same, but on the other side: <span class="alg">U' L' U L y' U R U' R'</span>.
+			</p>
+			<p>That is all you need to know to solve the second layer. Once again, repeat it
+				four times (once for each second layer edge) until you have solved the second
+				layer of the rubik's cube!
+			</p>
+			<p>Sometimes you may find a second layer edge that is in the second layer,
+				but not in the correct spot, or maybe it is in the correct spot but flipped around.
+				To solve either of these cases, just insert a pretend edge, which will take out
+				the bad edge. Then you can put the edge back in correctly.
+			</p>
+			<p>Watch the video below to see a full solve of the second layer.</p>
+			<p>/Video explaining second layer/</p>
+			<div class="practice">
+				<p>To practice the second layer, the best way really is to scramble
+					entire cube each time and practice all of the preceding steps
+					to make sure you don't forget how to do them.
+				</p>
+			</div>
+		</section>
+		<section>
+			<h2>The Yellow Cross</h2>
+			<p>The yellow cross consists of two steps: <strong>Orientation of the edges</strong>
+				and <strong>Alignment of the yellow cross</strong>.
+				This is what the yellow cross look like:
+			</p>
+			<figure class="cube" id="yellowCross1"></figure>
+			<script>createCube("yellowCross1")</script>
+			<p>The first step is the orientation of the cross. That looks like this:</p>
+			<figure class="cube" id="cross"></figure>
+			<script>createCube("cross")</script>
+			<p>Notice that the side colors of the cross don't matter yet. All we are doing
+				in this step is making sure the yellow side of all the edges are facing up.
+			</p>
+			<p>There is one algorithm you need to learn for this step. It goes like this:
+				<span class="alg">F R U R' U' F'</span>.
+			</p>
+			<p>There are four cases that can show up, as shown below.</p>
+			<figure class="cube" id="dot"></figure>
+			<script>createCube("dot")</script>
+			<figure class="cube" id="lShape"></figure>
+			<script>createCube("lShape")</script>
+			<figure class="cube" id="line"></figure>
+			<script>createCube("line")</script>
+			<figure class="cube" id="cross1"></figure>
+			<script>createCube("cross1")</script>
+			<p>If you got the cross, you're already done! If you got one of the other cases,
+				just do the algorithm and it will turn into the next case.
+			</p>
+			<aside>
+				<p>If you don't have any of the cases listed above (in other words,
+					if you have three edges correct, or only one edge correct) that means
+					that someone has taken your cube apart and put an edge back in incorrectly.
+				</p>
+				<p>There is no way to fix this using only legal moves, so you will need to
+					take your cube apart a little bit to take one of the bad edges out,
+					so that you can put it back in correctly. Then you can continue solving
+					it as normal.
+				</p>
+			</aside>
+			<p>Make sure to hold the cube in the orientation shown in the examples.
+				Hold the L-shape with one yellow edge pointing toward you, and the other
+				pointing to the right. When solving the line, hold the cube so that the edges
+				point to the left and the right.
+				(The dot doesn't matter becuase it is the same from any direction).
+			</p>
+			<p>Watch the video below to see the orientation of the yellow cross explained.</p>
+			<p>/Video explaining yellow cross/</p>
+			<div class="practice">
+				<p>To practice the yellow cross, you can just continue doing the cross
+					algorithm.
+				</p>
+				<p>When practicing just the algorithm, don't worry about which case you have.
+					Just do it a bunch of times until your fingers can do it without even thinking.
+				</p>
+				<p>Once you have the algorithm in muscle memory, then you should practice
+					how to do each case. That means that you should scramble the entire cube
+					and practice every step, making sure you end up with the yellow cross
+					every time.
+				</p>
+			</div>
+			<p>Now it is time to align the yellow cross. Here is the algorithm you need
+				to know for this step: <span class="alg">R U R' U R U2 R'</span>.
+			</p>
+			<p>There are three cases that can come up during this step. Either the cross
+				will already be aligned (hooray!) or there will be two cross pieces next
+				to each other that need to switch (like the L-shape case in the last step),
+				or finally there could be two across from each other that need to switch
+				(like the line case in the last step). That means that there will always
+				be at least two edges in the correct position.
+			</p>
+			<p>If you do not have two edges correct right now, turn the top layer until
+				you do. This is always possible. There cannot be less than two correct.
+			</p>
+			<figure class="cube" id="adjacentEdges"></figure>
+			<script>createCube("adjacentEdges")</script>
+			<figure class="cube" id="oppositeEdges"></figure>
+			<script>createCube("oppositeEdges")</script>
+			<figure class="cube" id="fullCross"></figure>
+			<script>createCube("fullCross")</script>
+			<p>Similar to the previous step, you will hold the cube in a specific orientation
+				to solve each case. However, instead of thinking about the solved pieces,
+				now you need to think about the <em>unsolved</em> pieces. In other words,
+				if you have two unsolved edges next to each other (L-shape case),
+				hold one pointing towards you and the other pointing to the right.
+				For the line case, hold the unsolved edges on the left and right.
+			</p>
+			<p>Once you are holding the cube the correct way, execute the algorithm to solve
+				each case. The algorithm will turn the line case into the L-shape, and then
+				doing the algorithm again will align the entire yellow cross.
+			</p>
+			<p>After doing the algorithm to solve the L-shape, you will not have any edges
+				aligned to the correct centers, but you just need turn the top until
+				the cross is solved.
+			</p>
+			<p>You now have the entire yellow cross solved! There are now only the yellow corners
+				left to solve! To see me explain the alignment of the yellow cross,
+				watch the video below.
+			</p>
+			<p>/Video explaining yellow cross/</p>
+			<div class="practice">
+				<p>Now it is time to practice what you have learned.</p>
+				<p>First, practice the algorithm until you can do it with your eyes closed.</p>
+				<p>Then you should scramble the cube a few times and practice everything you
+					have learned up to this point. Make sure to practice each case!
+				</p>
+			</div>
+		</section>
+		<section>
+			<h2>The Yellow Corners</h2>
+			<p>You are on the last step! The cube is so close to being solved! You can do it!</p>
+			<p>Obviously, after this step the cube will be solved, but for consistency's sake,
+				this is what the cube will look like after you have finished this step ;)
+			</p>
+			<figure class="cube" id="solved1"></figure>
+			<script>createCube("solved1")</script>
+			<p>To start, we first put all of the corners in the right spot, then we will
+				orient them correctly. This step is confusing to a lot of people, but it
+				just turns that moving corners around is easier if we don't worry about their
+				orientation, and it is also not too hard to turn corners while keeping them
+				in the same position.
+			</p>
+			<p>To put the corners in the right spot, first look for any that are already correct.
+				You are looking for a corner that has the same three colors on it as the edges
+				around it, even though it may not match the colors next to it. Example below.
+			</p>
+			<figure class="cube" id="twistedCorner"></figure>
+			<script>createCube("twistedCorner")</script>
+			<p>There are three possibilities: either they are all correct already, or there is
+				only one correct, or no corners are in the correct positions. You can never
+				have only two. If you see two correct corners, that means that the other two
+				must be correct as well.
+			</p>
+			<aside>
+				If you somehow have two corners in the correct positions, and two in the incorrect
+				positions, that means that the cube has been taken apart and two corners were
+				switched. The only way to fix that is to physically take the two bad corners out
+				and put them back in the correct positions.
+			</aside>
+			<p>If you find one correct corner, hold the cube so that the correct corner is
+				in the front right position, and execute this algorithm: <span class="alg">
+					L' U R U' L U R' U'</span>. If none are correct, hold it in any orientation
+				and do the same algorithm.
+			</p>
+			<p>You may do the algorithm and then discover that you still only have one
+				corner, or you still do not have any. In that case, just do it again.
+				After doing the algorithm at most twice, you are guaranteed to get the next case.
+			</p>
+			<p>The video below explains the process of putting the yellow corner pieces
+				in the correct spot.
+			</p>
+			<p>/Video explaining yellow corners/</p>
+			<div class="practice">
+				<p>Now practice your yellow corners!</p>
+				<p>As before, practice the algorithm until you have it down, then scramble
+					the cube and go back to the beginning to make sure you don't forget what
+					you have learned.
+				</p>
+			</div>
+			<p>At this point, every single piece on your cube will be in the correct position,
+				and you will only have a few corners that need to be turned. It may be tempting
+				to just forcefully turn them to the correct orientation, but that is not allowed
+				in cubing. If you are just solving it so that it is no longer sitting mixed up
+				on your shelf, you may feel justified in just turning them, but I promise you
+				will not have the same satisfaction you would if you did it correctly all the
+				way through.
+			</p>
+			<p>That being said, the last step is not that hard anyway.</p>
+			<p>The algorithm you need to learn to solve twisted corners is just this:
+				<span class="alg">R' D' R D</span>. That's it. Just hold a twisted yellow
+				corner in the front right position and do that algorithm.
+			</p>
+			<p>However, just doing that once will not solve anything. It will look like
+				you have just messed up the cube. That's because, to turn a corner, you need
+				to do the algorithm twice. Doing it twice takes the corner out of its spot,
+				turns it, and puts it back in (so it will be twisted from its original orientation).
+			</p>
+			<p>The rest of the cube will still look scrambled, but that's okay. All we
+				care about right now is if the corner is solved. Once you have solve one,
+				turn the top until a different twisted corner is in the front right position.
+				<strong>(Important: do not turn the cube! Only turn the top!)</strong>
+			</p>
+			<aside>
+				<p>If your cube is not solved once you have solved each twisted corner,
+					that means that someone has twisted one and only one corner on your cube,
+					which is not possible to solve using only legal moves.
+				</p>
+				<p>To fix it, keep doing the corner twist
+					algorithm until the bottom of the cube is solved. This will make your
+					corner unsolved again, so now you will have to twist it manually, which may
+					involve taking the corner piece out and put it back in correctly.
+				</p>
+			</aside>
+			<p>To finish solving the entire rubik's cube, just repeat that step for each
+				corner. Once you have done all of them, your cube will be solved!
+			</p>
+			<p>Except that the top won't be aligned since you turned it to switch out the corners.
+				So the very last step to solve the rubik's cube is just to turn the top face until
+				your cube has the same colors on every side.
+			</p>
+			<p>To see another explanation of how to fix the orientation of the yellow corners,
+				watch the video below.
+			</p>
+			<p>/Video explaining yellow corners/</p>
+			<p><strong>Congratulations! You're done! The cube is solved!</strong></p>
+			<div class="practice">
+				<p>Of course, now that you know how to solve the entire
+					cube, you need to practice! So go practice so that you can
+					impress your friends!
+				</p>
+			</div>
+		</section>
+	</article>
+
+	<footer>
+		Sean Briggs &copy;2025
+	</footer>
+</body>
+
+</html>

@@ -90,6 +90,7 @@ article p {
 
 article aside {
 	float: right;
+	clear: right;
 	width: 40%;
 	padding: 15px;
 	margin: 0px 0px 20px 20px;
@@ -98,15 +99,32 @@ article aside {
 	border: black solid 2px;
 }
 
+article div.practice {
+	width: 80%;
+	padding: 20px;
+	margin: 20px auto;
+	background-color: aliceblue;
+	border: black double 4px;
+}
+
+article div.practice > p:first-child::before {
+	content: "PRACTICE TIME";
+	display: block;
+	margin-bottom: 1em;
+	font-size: 1.2em;
+	color: rgb(180, 180, 255);
+}
+
 article figure {
 	float: left;
 	margin: 0px 20px;
 }
 
-article code {
+article span.alg {
 	font-family: inherit;
 	background-color: rgb(225, 225, 225);
 	color: darkred;
+	break-inside: avoid;
 }
 
 /* Article List Styles */
