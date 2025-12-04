@@ -63,8 +63,7 @@ article {
 	width: 50%;
 	min-width: 320px;
     max-width: 800px;
-	margin: 50px 50px;
-	margin-left: 25%;
+	margin: 50px auto;
 	line-height: 1.5em;
 }
 
@@ -97,6 +96,16 @@ article aside {
 	margin-right: -35%;
 	background-color: rgb(255, 217, 190);
 	border: black solid 2px;
+}
+
+article aside img {
+	max-width: 100%;
+	height: auto;
+}
+
+article video {
+	max-width: 100%;
+	height: auto;
 }
 
 article div.practice {
@@ -149,4 +158,27 @@ article ul ul {
 	list-style-type: circle;
 }
 
-/* Other Styles */
+/* Nav Styles */
+nav {
+	width: 20%;
+	position: absolute;
+	background-color: rgb(194, 255, 255);
+}
+
+nav h2 {
+	margin: 10px auto;
+	text-align: center;
+}
+
+nav li {
+	padding: 0.2em 2em 0.2em 4em;
+	text-indent: -2em;
+}
+
+nav ul.internal a {
+	color: black;
+}
+
+nav ul a:hover {
+	text-decoration: underline;
+}

@@ -7,7 +7,7 @@
 		Author: Sean Briggs
 		Date:	2025-11-11
 
-		Filename: home.html
+		Filename: 3x3_cube.html
 	-->
 
 	<meta charset="utf-8" />
@@ -25,6 +25,24 @@
 		<img src="rubiks-cube-logo.png" alt="Rubik's" />
 		<h1>Solver</h1>
 	</header>
+
+	<nav>
+		<h2>Links:</h2>
+		<ul>
+			<li><a href="move_notation.html">How To Read Move Notation</a></li>
+			<li><a href="beginner_shortcuts.html">Beginner's Method Tricks and Shortcuts</a></li>
+		</ul>
+		<h2>Steps to Solve:</h2>
+		<ul class="internal">
+			<li><a href="#whiteCrossHead">White Cross</a></li>
+			<li><a href="#whiteCornersHead">White Corners</a></li>
+			<li><a href="#secondLayerHead">Second Layer</a></li>
+			<li><a href="#yellowCrossHead">Orientation of Yellow Cross</a></li>
+			<li><a href="#alignedCrossHead">Alignment of Yellow Cross</a></li>
+			<li><a href="#positionedCornersHead">Positioning of Yellow Corners</a></li>
+			<li><a href="#orientedCornersHead">Orientation of Yellow Corners</a></li>
+		</ul>
+	</nav>
 
 	<article>
 		<section>
@@ -95,7 +113,7 @@
 			<script>createCube("solved");</script>
 		</section>
 		<section>
-			<h2>Solving the White Cross</h2>
+			<h2 id="whiteCrossHead">Solving the White Cross</h2>
 			<p>First, you must solve the white cross.
 				When you have finished this step, the cube will look like this
 				(the gray pieces indicate that the piece could be any color,
@@ -119,11 +137,17 @@
 				<p>There are three types of pieces:
 					<ul>
 						<li><strong>Center pieces (6),</strong> which have only one color, and do
-							not move because they are all attached to each other.</li>
+							not move because they are all attached to each other.
+							<img src="media/centers.png" alt="rubik's cube core" />
+						</li>
 						<li><strong>Edge pieces (12),</strong> which have two colors, and touch the
-							center pieces and corner pieces. And</li>
+							center pieces and corner pieces.
+							<img src="media/edges.png" alt="rubik's cube edge pieces" /> And
+						</li>
 						<li><strong>Corner pieces (8),</strong> which have three colors,
-							and only touch edge pieces.</li>
+							and only touch edge pieces.
+							<img src="media/corners.png" alt="rubik's cube corner pieces" />
+						</li>
 					</ul>
 				</p>
 				<p>A common, and very natural, way to try to solve the rubik's cube
@@ -170,7 +194,7 @@
 				so you will then need to turn the left side (or right side)
 				back the other way to fix it. The exact sequence of moves is
 				<span class="alg">L' F L</span> (or <span class="alg">R F' R'</span>).
-				To learn what these letters mean, visit this page: <a href="#">
+				To learn what these letters mean, visit this page: <a href="move_notation.html">
 				How To Read Move Notation</a>. It will be very helpful to know later on.
 			</p>
 			<p>(For the curious: the move for the first case is just
@@ -191,7 +215,10 @@
 				you can just turn the front until the piece is on top.
 			</p>
 			<p>To see all the steps explained with an example cross, see the video below.</p>
-			<p>/Video explaining white cross/</p>
+			<video controls poster="media/white_cross.png">
+				<source src="media/white_cross.mp4" type="video/mp4" />
+				<p><em>To play this video clip, your browser needs to support HTML5.</em></p>
+			</video>
 			<div class="practice">
 				<p>Wait! Before you go on!</p>
 				<p>If you are just here to solve the rubik's cube once so that its no longer
@@ -216,7 +243,7 @@
 			</div>
 		</section>
 		<section>
-			<h2>Completing the First Layer</h2>
+			<h2 id="whiteCornersHead">Completing the First Layer</h2>
 			<p>The next step in solving the rubik's cube is to solve the white corners.
 				The completed step will look like this:
 			</p>
@@ -282,7 +309,10 @@
 				until you have solved the first layer.
 			</p>
 			<p>Watch the video below to see examples of each step.</p>
-			<p>/Video explaining white corners/</p>
+			<video controls poster="media/white_corners.png">
+				<source src="media/white_corners.MP4" type="video/mp4" />
+				<p><em>To play this video clip, your browser needs to support HTML5.</em></p>
+			</video>
 			<div class="practice">
 				<p>It's Practice Time again!</p>
 				<p>To practice the white corners, I would recommend practicing the entire
@@ -292,7 +322,7 @@
 			</div>
 		</section>
 		<section>
-			<h2>The Second Layer</h2>
+			<h2 id="secondLayerHead">The Second Layer</h2>
 			<p>The last thing to do before we get to the top layer is to solve the edges
 				in the second layer. The completed step will look like this:
 			</p>
@@ -348,7 +378,10 @@
 				the bad edge. Then you can put the edge back in correctly.
 			</p>
 			<p>Watch the video below to see a full solve of the second layer.</p>
-			<p>/Video explaining second layer/</p>
+			<video controls poster="media/second_layer.png">
+				<source src="media/second_layer.MP4" type="video/mp4" />
+				<p><em>To play this video clip, your browser needs to support HTML5.</em></p>
+			</video>
 			<div class="practice">
 				<p>To practice the second layer, the best way really is to scramble
 					entire cube each time and practice all of the preceding steps
@@ -357,7 +390,7 @@
 			</div>
 		</section>
 		<section>
-			<h2>The Yellow Cross</h2>
+			<h2 id="yellowCrossHead">The Yellow Cross</h2>
 			<p>The yellow cross consists of two steps: <strong>Orientation of the edges</strong>
 				and <strong>Alignment of the yellow cross</strong>.
 				This is what the yellow cross look like:
@@ -417,8 +450,9 @@
 					every time.
 				</p>
 			</div>
-			<p>Now it is time to align the yellow cross. Here is the algorithm you need
-				to know for this step: <span class="alg">R U R' U R U2 R'</span>.
+			<p id="alignedCrossHead">Now it is time to align the yellow cross.
+				Here is the algorithm you need to know for this step:
+				<span class="alg">R U R' U R U2 R'</span>.
 			</p>
 			<p>There are three cases that can come up during this step. Either the cross
 				will already be aligned (hooray!) or there will be two cross pieces next
@@ -465,7 +499,7 @@
 			</div>
 		</section>
 		<section>
-			<h2>The Yellow Corners</h2>
+			<h2 id="positionedCornersHead">The Yellow Corners</h2>
 			<p>You are on the last step! The cube is so close to being solved! You can do it!</p>
 			<p>Obviously, after this step the cube will be solved, but for consistency's sake,
 				this is what the cube will look like after you have finished this step ;)
@@ -515,7 +549,7 @@
 					you have learned.
 				</p>
 			</div>
-			<p>At this point, every single piece on your cube will be in the correct position,
+			<p id="orientedCornersHead">At this point, every single piece on your cube will be in the correct position,
 				and you will only have a few corners that need to be turned. It may be tempting
 				to just forcefully turn them to the correct orientation, but that is not allowed
 				in cubing. If you are just solving it so that it is no longer sitting mixed up
@@ -524,9 +558,9 @@
 				way through.
 			</p>
 			<p>That being said, the last step is not that hard anyway.</p>
-			<p>The algorithm you need to learn to solve twisted corners is just this:
-				<span class="alg">R' D' R D</span>. That's it. Just hold a twisted yellow
-				corner in the front right position and do that algorithm.
+			<p>The algorithm you need to learn to solve twisted corners
+				is just this: <span class="alg">R' D' R D</span>. That's it.
+				Just hold a twisted yellow corner in the front right position and do that algorithm.
 			</p>
 			<p>However, just doing that once will not solve anything. It will look like
 				you have just messed up the cube. That's because, to turn a corner, you need
@@ -560,7 +594,11 @@
 				watch the video below.
 			</p>
 			<p>/Video explaining yellow corners/</p>
-			<p><strong>Congratulations! You're done! The cube is solved!</strong></p>
+			<p><strong>Congratulations! You're done! The cube is solved!</strong>
+				To learn some tips, tricks, and shortcuts to help you solve the rubik's
+				cube faster and more efficiently, visit this page:
+				<a href="beginner_shortcuts.html">Beginner's Method Tricks and Shortcuts</a>
+			</p>
 			<div class="practice">
 				<p>Of course, now that you know how to solve the entire
 					cube, you need to practice! So go practice so that you can
